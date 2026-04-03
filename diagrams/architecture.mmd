@@ -1,0 +1,16 @@
+graph TD
+    subgraph AWS["AWS Cloud"]
+        S3[(S3)]
+        KMS[KMS]
+        CW[CloudWatch]
+        VPC[VPC]
+        CT[CloudTrail]
+        IAM[IAM]
+    end
+
+    Lambda --> S3
+    S3 --> KMS
+    KMS --> CW
+    CW --> VPC
+    VPC --> CT
+    CT --> IAM
