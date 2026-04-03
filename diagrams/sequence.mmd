@@ -1,0 +1,9 @@
+sequenceDiagram
+    User->>Lambda: Request
+    Lambda->>S3: Request
+    S3->>KMS: Request
+    KMS->>CW: Request
+    CW-->>KMS: Response
+    KMS-->>S3: Response
+    S3-->>Lambda: Response
+    Lambda-->>User: Response
